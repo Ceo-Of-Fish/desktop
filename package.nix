@@ -47,7 +47,8 @@ appimageTools.wrapType2 {
       --replace-quiet 'Exec=AppRun' 'Exec=capsule'
 
     wrapProgram $out/bin/capsule \
-      --set-default GDK_BACKEND wayland,x11
+      --set-default GDK_BACKEND wayland,x11 \
+      --run 'export XAUTHORITY=''${XAUTHORITY:-$HOME/.Xauthority}'
   '';
 
   meta = {
