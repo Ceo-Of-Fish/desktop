@@ -40,21 +40,7 @@ appimageTools.wrapType2 {
     libsecret
   ];
 
-extraInstallCommands = ''
-  extraInstallCommands = ''
-    install -Dm444 ${appimageContents}/capsule.desktop -t $out/share/applications
-    cp -r ${appimageContents}/usr/share/icons $out/share/
-    substituteInPlace $out/share/applications/capsule.desktop \
-      --replace-quiet 'Exec=AppRun' 'Exec=capsule'
-  wrapProgram $out/bin/capsule \
-    --set-default GDK_BACKEND wayland,x11 \
-    --run 'if [ -z "$XAUTHORITY" ]; then
-      for f in /var/run/lightdm/$USER/xauthority "$HOME/.Xauthority"; do
-        if [ -r "$f" ]; then export XAUTHORITY="$f"; break; fi
-      done
-    fi'
-'';
-/* old
+
   extraInstallCommands = ''
     install -Dm444 ${appimageContents}/capsule.desktop -t $out/share/applications
     cp -r ${appimageContents}/usr/share/icons $out/share/
@@ -64,7 +50,7 @@ extraInstallCommands = ''
     wrapProgram $out/bin/capsule \
       --set-default GDK_BACKEND wayland,x11 \
       --run 'export XAUTHORITY=''${XAUTHORITY:-$HOME/.Xauthority}'
-  ''; */
+  '';
 
   meta = {
     description = "Open-source music player for Windows and Linux with local files, Navidrome, and public streaming sources";
