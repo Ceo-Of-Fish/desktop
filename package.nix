@@ -18,7 +18,7 @@ let
 
   src = fetchurl {
     url = "https://github.com/getcapsule/desktop/releases/download/v${version}/capsule_${version}_amd64.AppImage";
-    hash = "sha256-J9DGxNB5fFIJKb1DegemA7E2aXRBHZn9C3o33hSpU3U=";
+    hash = "sha256-bIt8ByTIy/l2uNKNxRC3gbodYz6zALtqvMWB6WOcOkA=";
   };
 
   appimageContents = appimageTools.extract {
