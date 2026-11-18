@@ -2,6 +2,7 @@
   lib,
   appimageTools,
   fetchurl,
+  libgpg-error,
   webkitgtk_4_1,
   gtk3,
   libappindicator-gtk3,
@@ -27,6 +28,7 @@ appimageTools.wrapType2 {
   inherit pname version src;
 
   extraPkgs = _: [
+    libgpg-error
     webkitgtk_4_1
     gtk3
     libappindicator-gtk3
