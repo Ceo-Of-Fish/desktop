@@ -14,7 +14,7 @@
 
 let
   pname = "capsule";
-  version = "0.5.5";
+  version = "0.5.7";
 
   src = fetchurl {
     url = "https://github.com/getcapsule/desktop/releases/download/v${version}/capsule_${version}_amd64.AppImage";
