@@ -2,6 +2,7 @@
   lib,
   appimageTools,
   fetchurl,
+  makeWrapper,
   libgpg-error,
   webkitgtk_4_1,
   gtk3,
